@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## YSH BUG 修改日志
 
 You can use the [editor on GitHub](https://github.com/hanbiji/ysh-bug/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
