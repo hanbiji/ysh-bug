@@ -10,7 +10,7 @@
 array(3) { [0]=> string(18) "Error Number: 2006" [1]=> string(26) "MySQL server has gone away" [2]=> string(50) "SELECT * FROM (`xz_exam_record`) WHERE `id` = 898" } string(0) "" bool(false)
 ```
 ### 原因：因欠费发送短信失败
-### 解决：注释 application/controllers/paper.php 3065-3067
+### 解决：注释 application/controllers/paper.php 3065-3067行
 ```解决
 if(ENVIRONMENT == PRODUCTION){
     $this->message_model->send_message('uid：'.$this->member_uid.'，用户名：'.$this->mine_name.' 用户正在下发record_id：'.$record_id.'的考试');
