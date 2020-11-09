@@ -4,12 +4,25 @@ You can use the [editor on GitHub](https://github.com/hanbiji/ysh-bug/edit/gh-pa
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### 无法下发考试
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+下发考试报下面错误
 
-```markdown
-Syntax highlighted code block
+```无法下发考试
+array(3) { [0]=> string(18) "Error Number: 2006" [1]=> string(26) "MySQL server has gone away" [2]=> string(50) "SELECT * FROM (`xz_exam_record`) WHERE `id` = 898" } string(0) "" bool(false)
+### 原因：因欠费发送短信失败
+### 解决：注释 application/controllers/paper.php 3065-3067
+if(ENVIRONMENT == PRODUCTION){
+    $this->message_model->send_message('uid：'.$this->member_uid.'，用户名：'.$this->mine_name.' 用户正在下发record_id：'.$record_id.'的考试');
+}
+```
+
+### Demo
+
+下发考试报下面错误
+
+```Demo
+array(3) { [0]=> string(18) "Error Number: 2006" [1]=> string(26) "MySQL server has gone away" [2]=> string(50) "SELECT * FROM (`xz_exam_record`) WHERE `id` = 898" } string(0) "" bool(false)
 
 # Header 1
 ## Header 2
@@ -25,6 +38,7 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
